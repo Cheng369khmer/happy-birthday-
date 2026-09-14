@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday - ធី កញ្ញារ៉ា</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Moul&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Canvas កាំជ្រួចពេញអេក្រង់ -->
+  <canvas id="fireworksCanvas"></canvas>
+
+  <!-- Audio Player (Happy Birthday Tune) -->
+  <audio id="bgMusic" loop src="https://actions.google.com/sounds/v1/holidays/happy_birthday_horn.ogg"></audio>
+
+  <!-- Floating Music Button -->
+  <div class="music-floating" onclick="toggleMusic()">
+    <span id="musicIcon">🎵</span>
+    <span id="musicText">ចាក់ភ្លេង</span>
+  </div>
+
+  <div class="full-container">
+    
+    <!-- ផ្នែកទី ១៖ Banner Hero Full Screen -->
+    <section class="banner-hero-full">
+      <div class="banner-inner">
+        <div class="banner-content">
+          <div class="banner-tag">✨ SPECIAL DAY • ២៣ តុលា ២០២៦ ✨</div>
+          <p class="eng-greet">happy birthday to you</p>
+          <h1 class="khmer-title">រីករាយថ្ងៃកំណើត</h1>
+          <h2 class="person-name">កញ្ញា ធី កញ្ញារ៉ា</h2>
+          <p class="banner-quote">
+            «សូមឱ្យថ្ងៃពិសេសនេះ ពោរពេញដោយភាពស្រស់បំព្រង ស្នាមញញឹម និងសេចក្តីសុខគ្រប់ពេលវេលា»
+          </p>
+
+          <!-- Countdown -->
+          <div class="countdown-grid">
+            <div class="c-box"><span id="days">00</span><small>ថ្ងៃ</small></div>
+            <div class="c-box"><span id="hours">00</span><small>ម៉ោង</small></div>
+            <div class="c-box"><span id="minutes">00</span><small>នាទី</small></div>
+            <div class="c-box"><span id="seconds">00</span><small>វិនាទី</small></div>
+          </div>
+        </div>
+
+        <div class="banner-artwork">
+          <div class="art-circle"></div>
+          <div class="art-leaf leaf-left">🌿</div>
+          <div class="art-leaf leaf-right">🌸</div>
+          <div class="portrait-card">
+            <!-- ភ្ជាប់រូបភាព baby.jpg ពី images folder -->
+            <img id="mainAvatar" src="images/baby.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600'" alt="ធី កញ្ញារ៉ា">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ផ្នែកទី ២៖ នំខេកផ្លុំទៀនអន្តរកម្ម -->
+    <section class="candle-section">
+      <h3 class="section-title">🎂 ពិធីផ្លុំទៀនបួងសួង</h3>
+      <p class="section-desc">សូមតាំងចិត្តបួងសួងនូវអ្វីដែលអ្នកប្រាថ្នា រួចចុចលើភ្លើងទៀន ឬចុចប៊ូតុងដើម្បីផ្លុំទៀន!</p>
+
+      <div class="cake-container" onclick="blowCandles()">
+        <div class="candles-wrapper">
+          <div class="candle">
+            <div class="flame" id="flame1"></div>
+            <div class="smoke" id="smoke1"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame2"></div>
+            <div class="smoke" id="smoke2"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame3"></div>
+            <div class="smoke" id="smoke3"></div>
+          </div>
+        </div>
+
+        <div class="cake">
+          <div class="cake-layer layer-top">
+            <div class="cherry">🍓</div>
+          </div>
+          <div class="cake-layer layer-middle"></div>
+          <div class="cake-layer layer-bottom"></div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <div class="cake-actions">
+        <button id="blowBtn" class="primary-btn" onclick="blowCandles()">💨 ចុចផ្លុំទៀន (Make a Wish)</button>
+        <p id="wishSuccessText" class="wish-success-text">🎉 ទៀនបានផ្លុំរលត់ហើយ! សូមឱ្យរាល់ការបួងសួងក្លាយជាការពិត! 🌸✨</p>
+      </div>
+    </section>
+
+    <!-- ផ្នែកទី ៣៖ សំបុត្រស្នេហ៍អន្តរកម្ម (ចុចបើកទើបបង្ហាញ) -->
+    <section class="letter-section-full">
+      <div class="letter-badge">💌 SPECIAL LOVE LETTER</div>
+      <h3 class="section-title">សំបុត្រស្នេហ៍ផ្ញើជូនអូនសម្លាញ់</h3>
+      <p class="section-desc">មានសារសម្ងាត់មួយផ្ញើចេញពីបេះដូងរបស់បង សូមចុចលើស្រោមសំបុត្រដើម្បីបើកអាន</p>
+
+      <!-- ស្រោមសំបុត្រ 3D -->
+      <div class="envelope-interactive-box" id="envelopeBox" onclick="openRomanticLetter()">
+        <div class="envelope-3d">
+          <div class="env-flap" id="envFlap"></div>
+          <div class="env-pocket"></div>
+          <div class="env-seal" id="envSeal">
+            <span class="seal-icon">💖</span>
+            <span class="seal-hint">ចុចបើក</span>
+          </div>
+          <div class="env-text-preview">To: ធី កញ្ញារ៉ា 🌸</div>
+        </div>
+        <p class="click-hint-text">✨ ចុចលើសំបុត្រដើម្បីបើកអានពរជ័យ ✨</p>
+      </div>
+
+      <!-- ផ្ទាំង Modal សំបុត្រស្នេហ៍ពេញលេញ -->
+      <div class="letter-modal-overlay" id="letterModalOverlay" onclick="closeOnBackdrop(event)">
+        <div class="letter-modal-content" id="letterModalCard">
+          <button class="close-letter-btn" onclick="closeRomanticLetter()" title="បិទសំបុត្រ">✕</button>
+          
+          <div class="letter-paper-inner">
+            <div class="stamp-box">
+              <span class="stamp-heart">💖</span>
+              <span class="stamp-text">FOR KANYARA</span>
+            </div>
+
+            <div class="letter-date-top">
+              📍 ភ្នំពេញ, ថ្ងៃទី ២៣ ខែតុលា ឆ្នាំ ២០២៦
+            </div>
+
+            <h4 class="letter-recipient">
+              ជូនចំពោះ៖ អូនសម្លាញ់ ធី កញ្ញារ៉ា (មនុស្សល្អរបស់បង) 🌸✨
+            </h4>
+
+            <div class="letter-content-text">
+              <p class="intro-p">
+                <strong>រីករាយថ្ងៃកំណើតណា៎មនុស្សល្អរបស់បង! 🎂🌹</strong>
+              </p>
+              <p>
+                អរគុណអូនខ្លាំងណាស់ដែលបានចូលមកក្នុងជីវិតរបស់បង នាំមកនូវស្នាមញញឹម ភាពកក់ក្តៅ និងក្តីសុខដែលមិនអាចកាត់ថ្លៃបានក្នុងរាល់ថ្ងៃកន្លងមកនេះ។ វត្តមានរបស់អូន គឺជាកាដូដ៏មានតម្លៃបំផុតសម្រាប់បង។
+              </p>
+              <p>
+                ក្នុងថ្ងៃខួបកំណើតដ៏ពិសេសនេះ បងសូមបួងសួង និងជូនពរឱ្យអូនសម្លាញ់ជួបតែរឿងល្អៗ មានសុខភាពល្អមាំមួន សម្រស់កាន់តែស្រស់ស្អាត គួរឱ្យស្រលាញ់ និងពោរពេញដោយស្នាមញញឹមស្រស់ស្រាយជានិច្ច។ សូមឱ្យរាល់ក្តីស្រមៃ និងការប្រាថ្នារបស់អូន មិនថាការសិក្សា ឬការងារ សម្រេចបានជោគជ័យទាំងអស់ណា៎!
+              </p>
+              <p>
+                ទោះបីទៅថ្ងៃមុខមានរឿងអ្វីកើតឡើងក៏ដោយ ក៏បងនៅតែនៅក្បែរអូន ស្រលាញ់ ការពារ និងផ្តល់កម្លាំងចិត្តឱ្យអូនរហូត។ ស្រលាញ់អូនខ្លាំងណាស់! 🥰
+              </p>
+            </div>
+
+            <div class="letter-footer-sign">
+              <div class="sign-text">ពីមនុស្សប្រុសដែលស្រលាញ់អូនជាងគេលើលោក ❤️</div>
+              <div class="sign-name">ជំនួយការ បេះដូង 💍✨</div>
+            </div>
+
+            <div class="love-actions">
+              <button class="love-btn" onclick="sendLoveHearts()">💖 ស្រលាញ់អូនខ្លាំងណាស់ (ចុចផ្ញើបេះដូង) 💕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ផ្នែកទី ៤៖ Photo Gallery -->
+    <section class="gallery-section">
+      <h3 class="section-title">📸 កម្រងរូបភាពអនុស្សាវរីយ៍ (Memories Gallery)</h3>
+      <p class="section-desc">ពេលវេលាដ៏ស្រស់បំព្រង និងស្នាមញញឹមរបស់ ធី កញ្ញារ៉ា</p>
+
+      <div class="gallery-grid">
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="images/baby.jpg" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500'" alt="Memory 1">
+          </div>
+          <div class="photo-caption">✨ ស្នាមញញឹមស្រស់ស្អាត</div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="images/2.jpg" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500'" alt="Memory 2">
+          </div>
+          <div class="photo-caption">🌸 ពេលវេលាដ៏រីករាយ</div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="images/3.jpg" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500'" alt="Memory 3">
+          </div>
+          <div class="photo-caption">💖 ភាពស្រស់ស្រាយជានិច្ច</div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="images/baby1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500'" alt="Memory 4">
+          </div>
+          <div class="photo-caption">🎂 ថ្ងៃកំណើត ២៣ តុលា</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Designed with Love for <strong>ធី កញ្ញារ៉ា</strong> | ២៣ តុលា ២០២៦</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
