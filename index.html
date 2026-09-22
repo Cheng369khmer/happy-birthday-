@@ -3,212 +3,1148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday - ធី កញ្ញារ៉ា</title>
-
-  <!-- Google Fonts -->
+  <title>Happy Birthday KANHARA THY ❤️</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Moul&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <!-- Confetti library -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0d0614;
+      --bg-card: rgba(26, 12, 38, 0.75);
+      --primary-pink: #ff4d79;
+      --soft-pink: #ff85a2;
+      --accent-gold: #f5c767;
+      --gold-gradient: linear-gradient(135deg, #ffe082 0%, #f5c767 50%, #d49a37 100%);
+      --pink-gradient: linear-gradient(135deg, #ff4d79 0%, #ff758c 50%, #ff7eb3 100%);
+      --text-light: #fef0f4;
+      --text-muted: #d4b8ca;
+      --border-glow: rgba(255, 105, 180, 0.35);
+      --shadow-romantic: 0 10px 30px -5px rgba(255, 77, 121, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 20% 15%, rgba(138, 28, 92, 0.35) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(212, 154, 55, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(60, 10, 50, 0.5) 0%, transparent 70%);
+      color: var(--text-light);
+      font-family: 'Kantumruy Pro', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    #particles-canvas {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 1;
+    }
+
+    .floating-music-btn {
+      position: fixed; bottom: 25px; right: 25px; z-index: 999;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--pink-gradient);
+      box-shadow: 0 0 20px rgba(255, 77, 121, 0.6), 0 0 10px rgba(245, 199, 103, 0.5);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: 2px solid #fff; transition: all 0.3s ease;
+    }
+    .floating-music-btn:hover { transform: scale(1.12) rotate(15deg); }
+    .floating-music-btn i { color: #fff; font-size: 22px; }
+    .floating-music-btn.playing { animation: pulseMusic 1.5s infinite; }
+    @keyframes pulseMusic {
+      0% { box-shadow: 0 0 0 0 rgba(255, 77, 121, 0.7); }
+      70% { box-shadow: 0 0 0 16px rgba(255, 77, 121, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 77, 121, 0); }
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+
+    nav {
+      position: sticky; top: 15px; z-index: 100; margin: 0 auto 30px;
+      max-width: 900px; background: rgba(22, 9, 32, 0.85); backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 182, 193, 0.25); border-radius: 40px;
+      padding: 10px 24px; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+    .nav-logo {
+      font-family: 'Great Vibes', cursive; font-size: 26px;
+      background: var(--gold-gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; letter-spacing: 1px;
+    }
+    .nav-links { display: flex; gap: 18px; list-style: none; }
+    .nav-links a {
+      color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500;
+      transition: color 0.3s; display: flex; align-items: center; gap: 5px;
+    }
+    .nav-links a:hover { color: var(--soft-pink); }
+    @media (max-width: 768px) { .nav-links { display: none; } nav { justify-content: center; } }
+
+    section { padding: 70px 0; position: relative; }
+    .section-title { text-align: center; margin-bottom: 45px; }
+    .section-title .sub-heading {
+      font-family: 'Dancing Script', cursive; font-size: 24px; color: var(--soft-pink);
+      letter-spacing: 2px; display: block; margin-bottom: 5px;
+    }
+    .section-title h2 {
+      font-family: 'Playfair Display', serif; font-size: 36px;
+      background: var(--gold-gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; display: inline-block;
+    }
+    .section-title p { color: var(--text-muted); font-size: 15px; margin-top: 8px; }
+
+    .glass-card {
+      background: var(--bg-card); backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glow); border-radius: 24px; padding: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .glass-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(255, 77, 121, 0.25); }
+
+    /* Section 1: Hero */
+    .hero-section { min-height: 88vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero-avatar-wrapper { position: relative; width: 210px; height: 210px; margin: 0 auto 30px; }
+    .hero-avatar {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      border: 4px solid #f5c767; box-shadow: 0 0 35px rgba(255, 77, 121, 0.7);
+    }
+    .avatar-halo {
+      position: absolute; top: -12px; left: -12px; right: -12px; bottom: -12px;
+      border-radius: 50%; border: 2px dashed rgba(255, 105, 180, 0.6);
+      animation: spin 20s linear infinite;
+    }
+    .floating-rose-badge {
+      position: absolute; bottom: 5px; right: 5px; background: var(--pink-gradient);
+      width: 50px; height: 50px; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 24px; border: 2px solid #fff;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    .hero-title-sub { font-family: 'Great Vibes', cursive; font-size: 32px; color: var(--soft-pink); margin-bottom: 8px; }
+    .hero-title-main {
+      font-family: 'Playfair Display', serif; font-size: 46px; font-weight: 800;
+      background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .hero-name {
+      font-size: 38px; font-weight: 800; color: #fff; text-transform: uppercase;
+      letter-spacing: 4px; text-shadow: 0 0 20px rgba(255, 77, 121, 0.8), 0 0 35px rgba(245, 199, 103, 0.6);
+      margin-bottom: 20px;
+    }
+    .hero-quote { font-size: 18px; max-width: 650px; margin: 0 auto 30px; color: #ffd6e0; font-style: italic; }
+    .cta-btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .btn-romantic {
+      background: var(--pink-gradient); color: #fff; border: none; padding: 14px 34px;
+      font-size: 16px; font-weight: 600; border-radius: 50px; cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 77, 121, 0.5); transition: all 0.3s ease;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .btn-romantic:hover { transform: scale(1.06); box-shadow: 0 10px 30px rgba(255, 77, 121, 0.8); }
+    .btn-outline-gold {
+      background: transparent; color: var(--accent-gold); border: 2px solid var(--accent-gold);
+      padding: 13px 30px; font-size: 16px; font-weight: 600; border-radius: 50px; cursor: pointer;
+      transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
+    }
+    .btn-outline-gold:hover { background: var(--gold-gradient); color: #210926; transform: scale(1.06); }
+
+    /* Section 2: Cake */
+    .cake-container {
+      position: relative; width: 280px; height: 230px; margin: 20px auto 35px;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end; cursor: pointer;
+    }
+    .candle { width: 14px; height: 50px; background: linear-gradient(to right, #ffd1dc, #fff, #ffd1dc); border-radius: 6px 6px 0 0; position: relative; }
+    .candle-flame {
+      position: absolute; top: -24px; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 24px; background: radial-gradient(ellipse at bottom, #fff 0%, #ffd700 45%, #ff4500 85%);
+      border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%; box-shadow: 0 0 20px #ff9900;
+      animation: flicker 0.15s ease-in-out infinite alternate; transition: opacity 0.5s;
+    }
+    .candle-flame.blown-out { opacity: 0; pointer-events: none; }
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1) rotate(-1deg); }
+      100% { transform: translateX(-50%) scale(1.1) rotate(1.5deg); }
+    }
+    .cake-layer { border-radius: 14px 14px 6px 6px; position: relative; }
+    .cake-top-layer { width: 160px; height: 55px; background: linear-gradient(180deg, #ff85a2 0%, #d83f6b 100%); }
+    .cake-bottom-layer { width: 230px; height: 75px; background: linear-gradient(180deg, #3d1435 0%, #20051e 100%); border-top: 5px solid #f5c767; }
+    .cake-plate { width: 270px; height: 14px; background: var(--gold-gradient); border-radius: 20px; margin-top: 2px; }
+    .wish-box { max-width: 600px; margin: 0 auto; text-align: center; }
+    .wish-result-message { margin-top: 20px; font-size: 19px; color: var(--accent-gold); font-weight: 600; min-height: 30px; }
+
+    /* Section 3: Countdown */
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 750px; margin: 0 auto; }
+    .timer-card {
+      background: rgba(35, 12, 48, 0.85); border: 1px solid rgba(245, 199, 103, 0.4);
+      border-radius: 18px; padding: 22px 10px; text-align: center;
+    }
+    .timer-num {
+      font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700;
+      background: var(--pink-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .timer-label { font-size: 13px; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; font-weight: 600; }
+    .date-badge { text-align: center; margin-top: 25px; font-size: 18px; color: #ffc2d1; font-weight: 500; }
+
+    /* Section 4: Letter */
+    .letter-container {
+      max-width: 780px; margin: 0 auto; background: linear-gradient(135deg, rgba(38, 14, 48, 0.95), rgba(20, 8, 28, 0.95));
+      border: 2px solid rgba(245, 199, 103, 0.5); border-radius: 28px; padding: 45px 40px; position: relative;
+    }
+    .letter-stamp {
+      position: absolute; top: 25px; right: 25px; width: 70px; height: 80px;
+      border: 2px dashed var(--accent-gold); border-radius: 8px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; color: var(--soft-pink); font-size: 12px; font-weight: bold;
+    }
+    .letter-salutation { font-family: 'Great Vibes', cursive; font-size: 34px; color: var(--accent-gold); margin-bottom: 20px; }
+    .letter-body { font-size: 17px; color: #f7e4ee; line-height: 1.9; white-space: pre-line; margin-bottom: 30px; }
+    .letter-sign { text-align: right; font-family: 'Dancing Script', cursive; font-size: 28px; color: var(--soft-pink); }
+
+    /* Section 5: Gallery */
+    .memories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .memory-card {
+      background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 182, 193, 0.2);
+      border-radius: 20px; overflow: hidden; cursor: pointer; transition: all 0.4s ease;
+    }
+    .memory-card:hover { transform: translateY(-8px); border-color: var(--soft-pink); box-shadow: var(--shadow-romantic); }
+    .memory-img-wrapper { height: 220px; position: relative; overflow: hidden; background: #2b1138; }
+    .memory-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .memory-card:hover .memory-img { transform: scale(1.08); }
+    .memory-content { padding: 16px 20px; background: rgba(30, 11, 42, 0.9); }
+    .memory-tag { font-size: 12px; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; }
+    .memory-title { font-size: 17px; font-weight: 600; color: #fff; margin: 4px 0; }
+    .memory-desc { font-size: 13px; color: var(--text-muted); }
+
+    .lightbox-modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.92); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .lightbox-content { max-width: 800px; border-radius: 16px; border: 2px solid var(--accent-gold); overflow: hidden; position: relative; }
+    .lightbox-content img { width: 100%; max-height: 75vh; object-fit: contain; display: block; }
+    .lightbox-caption { background: rgba(20, 7, 28, 0.95); padding: 15px 20px; color: #fff; text-align: center; }
+    .lightbox-close { position: absolute; top: 10px; right: 15px; color: #fff; font-size: 32px; cursor: pointer; }
+
+    /* Section 6: Reasons */
+    .reasons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .reason-card {
+      background: rgba(35, 12, 48, 0.7); border: 1px solid rgba(255, 105, 180, 0.25);
+      border-radius: 20px; padding: 28px 20px; text-align: center; transition: all 0.4s ease;
+    }
+    .reason-card:hover { transform: translateY(-10px); border-color: var(--accent-gold); }
+    .reason-icon { font-size: 44px; margin-bottom: 14px; }
+    .reason-title { font-size: 19px; font-weight: 700; color: var(--soft-pink); margin-bottom: 10px; }
+    .reason-desc { font-size: 14px; color: var(--text-light); }
+
+    /* Section 7: Music */
+    .music-player-box {
+      max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, rgba(38, 14, 52, 0.9), rgba(18, 5, 26, 0.9));
+      border: 2px solid var(--border-glow); border-radius: 28px; padding: 30px; text-align: center;
+    }
+    .vinyl-disk {
+      width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 20px;
+      background: radial-gradient(circle, #29082f 25%, #000 65%, #222 100%);
+      border: 3px solid var(--accent-gold); display: flex; align-items: center; justify-content: center;
+    }
+    .vinyl-disk.spinning { animation: spin 6s linear infinite; }
+    .vinyl-center { width: 45px; height: 45px; border-radius: 50%; background: var(--pink-gradient); display: flex; align-items: center; justify-content: center; color: #fff; }
+    .sound-waves { display: flex; justify-content: center; gap: 5px; height: 30px; align-items: center; margin-bottom: 20px; }
+    .bar { width: 5px; height: 6px; background: var(--accent-gold); border-radius: 10px; }
+    .sound-waves.active .bar { animation: bounceWave 0.8s ease-in-out infinite alternate; }
+    .sound-waves.active .bar:nth-child(2) { animation-delay: 0.15s; }
+    .sound-waves.active .bar:nth-child(3) { animation-delay: 0.3s; }
+    .sound-waves.active .bar:nth-child(4) { animation-delay: 0.45s; }
+    .sound-waves.active .bar:nth-child(5) { animation-delay: 0.6s; }
+    @keyframes bounceWave { 0% { height: 6px; } 100% { height: 28px; } }
+    .play-circle-btn {
+      width: 60px; height: 60px; border-radius: 50%; background: var(--pink-gradient);
+      color: #fff; border: none; font-size: 22px; cursor: pointer; transition: transform 0.2s;
+    }
+    .play-circle-btn:hover { transform: scale(1.1); }
+
+    /* Section 8: Flowers */
+    .flower-garden-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+    .flower-card {
+      background: rgba(30, 11, 42, 0.8); border: 1px solid rgba(255, 105, 180, 0.25);
+      border-radius: 24px; padding: 30px 20px; text-align: center; cursor: pointer; transition: all 0.3s;
+    }
+    .flower-card:hover { border-color: var(--soft-pink); transform: translateY(-6px); }
+    .flower-bloom-box { font-size: 65px; margin-bottom: 15px; }
+    .flower-name { font-size: 20px; font-weight: 700; color: var(--accent-gold); margin-bottom: 6px; }
+    .flower-meaning { font-size: 14px; color: #ffd6e0; margin-bottom: 15px; }
+    .btn-pick-flower {
+      background: rgba(255, 255, 255, 0.08); border: 1px solid var(--soft-pink);
+      color: #fff; padding: 8px 18px; font-size: 13px; border-radius: 30px; cursor: pointer;
+    }
+
+    /* Section 9: Gift */
+    .gift-stage { text-align: center; }
+    .gift-box-wrapper { position: relative; width: 160px; height: 160px; margin: 0 auto 30px; cursor: pointer; }
+    .gift-box-base {
+      width: 130px; height: 100px; background: linear-gradient(135deg, #e6005c, #99003d);
+      border-radius: 0 0 14px 14px; position: absolute; bottom: 0; left: 15px; border: 2px solid var(--accent-gold);
+    }
+    .gift-ribbon-vertical { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 24px; background: var(--gold-gradient); }
+    .gift-lid {
+      width: 146px; height: 38px; background: linear-gradient(135deg, #ff1a75, #b30047);
+      border-radius: 10px; position: absolute; top: 25px; left: 7px; border: 2px solid var(--accent-gold);
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 10;
+    }
+    .gift-bow { position: absolute; top: -24px; left: 50%; transform: translateX(-50%); font-size: 34px; color: #ffd700; }
+    .gift-box-wrapper.opened .gift-lid { transform: translateY(-60px) rotate(-25deg); }
+    .gift-reveal-card { max-width: 650px; margin: 20px auto 0; display: none; }
+
+    /* Section 10: Final */
+    .final-section { text-align: center; padding: 80px 0 100px; }
+    .final-card {
+      max-width: 750px; margin: 0 auto; border: 2px solid rgba(245, 199, 103, 0.6);
+      background: radial-gradient(circle at center, rgba(50, 16, 60, 0.9) 0%, rgba(18, 5, 25, 0.95) 100%);
+      padding: 50px 30px; border-radius: 32px; box-shadow: 0 0 50px rgba(255, 77, 121, 0.4);
+    }
+    .final-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--accent-gold); object-fit: cover; margin-bottom: 25px; }
+    .final-quote { font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 15px; }
+    .final-sub { font-size: 20px; color: var(--soft-pink); font-weight: 600; margin-bottom: 30px; }
+    .footer-credits { margin-top: 50px; color: var(--text-muted); font-size: 14px; }
+
+    @media (max-width: 600px) {
+      .hero-title-main { font-size: 32px; }
+      .hero-name { font-size: 28px; }
+      .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .timer-num { font-size: 34px; }
+      .letter-container { padding: 30px 20px; }
+      .final-quote { font-size: 22px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Canvas កាំជ្រួចពេញអេក្រង់ -->
-  <canvas id="fireworksCanvas"></canvas>
+  <canvas id="particles-canvas"></canvas>
 
-  <!-- Audio Player (Happy Birthday Tune) -->
-  <audio id="bgMusic" loop src="https://actions.google.com/sounds/v1/holidays/happy_birthday_horn.ogg"></audio>
-
-  <!-- Floating Music Button -->
-  <div class="music-floating" onclick="toggleMusic()">
-    <span id="musicIcon">🎵</span>
-    <span id="musicText">ចាក់ភ្លេង</span>
+  <div class="floating-music-btn" id="floatingMusicBtn" onclick="toggleMusic()" title="Play Music">
+    <i class="fa-solid fa-music"></i>
   </div>
 
-  <div class="full-container">
+  <div class="container">
+    <nav>
+      <div class="nav-logo">Kanhara's Day ✨</div>
+      <ul class="nav-links">
+        <li><a href="#welcome"><i class="fa-solid fa-heart"></i> Welcome</a></li>
+        <li><a href="#cake"><i class="fa-solid fa-cake-candles"></i> Cake</a></li>
+        <li><a href="#countdown"><i class="fa-solid fa-clock"></i> Date</a></li>
+        <li><a href="#message"><i class="fa-solid fa-envelope"></i> Message</a></li>
+        <li><a href="#memories"><i class="fa-solid fa-images"></i> Memories</a></li>
+        <li><a href="#special"><i class="fa-solid fa-sparkles"></i> 5 Things</a></li>
+        <li><a href="#song"><i class="fa-solid fa-music"></i> Song</a></li>
+        <li><a href="#flowers"><i class="fa-solid fa-spa"></i> Flowers</a></li>
+        <li><a href="#gift"><i class="fa-solid fa-gift"></i> Gift</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="hero-section" id="welcome">
+    <div class="container">
+      <div class="hero-avatar-wrapper">
+        <div class="avatar-halo"></div>
+        <img src="images/baby.jpg" alt="KANHARA THY" class="hero-avatar">
+        <div class="floating-rose-badge">🌹</div>
+      </div>
+      <div class="hero-title-sub">Happy Birthday, My Beautiful Girl ❤️</div>
+      <h1 class="hero-title-main">រីករាយថ្ងៃខួបកំណើត</h1>
+      <div class="hero-name">KANHARA THY</div>
+      <p class="hero-quote">
+        “You are the brightest star in my sky, the sweetest melody in my heart, and my greatest blessing.” 💕✨
+      </p>
+      <div class="cta-btn-group">
+        <button class="btn-romantic" onclick="scrollToSection('cake')">
+          <i class="fa-solid fa-cake-candles"></i> Make a Wish 🎂
+        </button>
+        <button class="btn-outline-gold" onclick="scrollToSection('gift')">
+          <i class="fa-solid fa-gift"></i> Open Surprise 🎁
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="cake" class="cake-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="sub-heading">Blow The Candle</span>
+        <h2>នំខួបកំណើត & ពាក្យជូនពរ</h2>
+        <p>សូមធ្វើការបួងសួង និងផ្លុំទៀនខួបកំណើតរបស់អ្នកនៅទីនេះ ✨</p>
+      </div>
+      <div class="glass-card wish-box">
+        <div class="cake-container" onclick="blowCandle()">
+          <div class="candle"><div class="candle-flame" id="flame"></div></div>
+          <div class="cake-layer cake-top-layer"></div>
+          <div class="cake-layer cake-bottom-layer"></div>
+          <div class="cake-plate"></div>
+        </div>
+        <button class="btn-romantic" id="wishBtn" onclick="blowCandle()">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Make a Wish ✨
+        </button>
+        <div class="wish-result-message" id="wishMessage">
+          ចុចលើប៊ូតុង ឬទៀនដើម្បីផ្លុំទៀន និងបួងសួង! 🕯️
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 23 09 2026 + PHOTO -->
+  <section id="countdown">
+    <div class="container">
+      <div class="section-title">
+        <span class="sub-heading">Special Moment</span>
+        <h2>ថ្ងៃខួបកំណើតពិសេស</h2>
+        <p>ពេលវេលាដ៏មានតម្លៃសម្រាប់មនុស្សដែលខ្ញុំស្រឡាញ់បំផុត</p>
+      </div>
+
+      <div class="countdown-grid">
+        <!-- 23 -->
+        <div class="timer-card">
+          <div class="timer-num">23</div>
+          <div class="timer-label">Day • ថ្ងៃទី</div>
+        </div>
+
+        <!-- 09 -->
+        <div class="timer-card">
+          <div class="timer-num">09</div>
+          <div class="timer-label">Month • ខែកញ្ញា</div>
+        </div>
+
+        <!-- 2026 -->
+        <div class="timer-card">
+          <div class="timer-num">2026</div>
+          <div class="timer-label">Year • ឆ្នាំ</div>
+        </div>
+
+        <!-- PHOTO CARD -->
+        <div class="timer-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="height: 46px; display: flex; align-items: center; justify-content: center;">
+            <img src="images/baby.jpg"
+                 alt="Kanhara Thy" 
+                 style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--accent-gold); box-shadow: 0 0 15px rgba(255, 77, 121, 0.7);">
+          </div>
+          <div class="timer-label">Forever Love ❤️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- SECTION 4: MY DEEPEST HEARTFELT MESSAGE -->
+<!-- SECTION 4: MY DEEPEST HEARTFELT MESSAGE (បំបាត់ចន្លោះទទេរ ១០០%) -->
+<section id="message" style="padding: 45px 0; position: relative;">
+  <div class="container" style="max-width: 820px; margin: 0 auto; padding: 0 15px;">
     
-    <!-- ផ្នែកទី ១៖ Banner Hero Full Screen -->
-    <section class="banner-hero-full">
-      <div class="banner-inner">
-        <div class="banner-content">
-          <div class="banner-tag">✨ SPECIAL DAY • ២៣ តុលា ២០២៦ ✨</div>
-          <p class="eng-greet">happy birthday to you</p>
-          <h1 class="khmer-title">រីករាយថ្ងៃកំណើត</h1>
-          <h2 class="person-name">កញ្ញា ធី កញ្ញារ៉ា</h2>
-          <p class="banner-quote">
-            «សូមឱ្យថ្ងៃពិសេសនេះ ពោរពេញដោយភាពស្រស់បំព្រង ស្នាមញញឹម និងសេចក្តីសុខគ្រប់ពេលវេលា»
-          </p>
+    <div class="section-title" style="text-align: center; margin-bottom: 25px;">
+      <span class="sub-heading" style="font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff85a2; display: block; margin-bottom: 4px;">From My Deepest Heart</span>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; background: linear-gradient(135deg, #ffe082 0%, #f5c767 50%, #d49a37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">សារចេញពីបេះដូងពិត</h2>
+      <p style="color: #cca8be; font-size: 14px; margin-top: 5px;">គ្រប់ពាក្យពេចន៍ដែលបងសរសេរ ផ្ញើជូនមនុស្សស្រីដែលបងស្រឡាញ់បំផុត</p>
+    </div>
 
-          <!-- Countdown -->
-          <div class="countdown-grid">
-            <div class="c-box"><span id="days">00</span><small>ថ្ងៃ</small></div>
-            <div class="c-box"><span id="hours">00</span><small>ម៉ោង</small></div>
-            <div class="c-box"><span id="minutes">00</span><small>នាទី</small></div>
-            <div class="c-box"><span id="seconds">00</span><small>វិនាទី</small></div>
-          </div>
-        </div>
-
-        <div class="banner-artwork">
-          <div class="art-circle"></div>
-          <div class="art-leaf leaf-left">🌿</div>
-          <div class="art-leaf leaf-right">🌸</div>
-          <div class="portrait-card">
-            <!-- ភ្ជាប់រូបភាព baby.jpg ពី images folder -->
-            <img id="mainAvatar" src="images/baby.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600'" alt="ធី កញ្ញារ៉ា">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ផ្នែកទី ២៖ នំខេកផ្លុំទៀនអន្តរកម្ម -->
-    <section class="candle-section">
-      <h3 class="section-title">🎂 ពិធីផ្លុំទៀនបួងសួង</h3>
-      <p class="section-desc">សូមតាំងចិត្តបួងសួងនូវអ្វីដែលអ្នកប្រាថ្នា រួចចុចលើភ្លើងទៀន ឬចុចប៊ូតុងដើម្បីផ្លុំទៀន!</p>
-
-      <div class="cake-container" onclick="blowCandles()">
-        <div class="candles-wrapper">
-          <div class="candle">
-            <div class="flame" id="flame1"></div>
-            <div class="smoke" id="smoke1"></div>
-          </div>
-          <div class="candle">
-            <div class="flame" id="flame2"></div>
-            <div class="smoke" id="smoke2"></div>
-          </div>
-          <div class="candle">
-            <div class="flame" id="flame3"></div>
-            <div class="smoke" id="smoke3"></div>
-          </div>
-        </div>
-
-        <div class="cake">
-          <div class="cake-layer layer-top">
-            <div class="cherry">🍓</div>
-          </div>
-          <div class="cake-layer layer-middle"></div>
-          <div class="cake-layer layer-bottom"></div>
-        </div>
-        <div class="cake-plate"></div>
+    <!-- Letter Card -->
+    <div style="background: linear-gradient(145deg, rgba(32, 10, 42, 0.95), rgba(16, 4, 22, 0.98)); border: 2px solid rgba(247, 201, 72, 0.6); border-radius: 24px; padding: 30px 25px 28px; position: relative; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 51, 102, 0.25);">
+      
+      <!-- Top Right Love Stamp -->
+      <div style="position: absolute; top: 18px; right: 18px; width: 58px; height: 68px; border: 2px dashed #f5c767; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255, 42, 109, 0.12); color: #ff85a2;">
+        <i class="fa-solid fa-heart" style="font-size: 20px; color: #ff3366; margin-bottom: 2px;"></i>
+        <span style="font-size: 9px; font-weight: bold; letter-spacing: 1px; color: #ffd166;">FOREVER</span>
       </div>
 
-      <div class="cake-actions">
-        <button id="blowBtn" class="primary-btn" onclick="blowCandles()">💨 ចុចផ្លុំទៀន (Make a Wish)</button>
-        <p id="wishSuccessText" class="wish-success-text">🎉 ទៀនបានផ្លុំរលត់ហើយ! សូមឱ្យរាល់ការបួងសួងក្លាយជាការពិត! 🌸✨</p>
+      <!-- Salutation -->
+      <div style="font-size: 20px; font-weight: 700; color: #ffd166; margin: 0 0 14px 0; padding-right: 70px; line-height: 1.4; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <span>🌹 ផ្ញើជូនម្ចាស់បេះដូងរបស់បង,</span>
+        <span style="color: #fff; background: linear-gradient(135deg, #fff 0%, #ffd166 60%, #ff85a2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1px;">KANHARA THY ❤️</span>
       </div>
-    </section>
 
-    <!-- ផ្នែកទី ៣៖ សំបុត្រស្នេហ៍អន្តរកម្ម (ចុចបើកទើបបង្ហាញ) -->
-    <section class="letter-section-full">
-      <div class="letter-badge">💌 SPECIAL LOVE LETTER</div>
-      <h3 class="section-title">សំបុត្រស្នេហ៍ផ្ញើជូនអូនសម្លាញ់</h3>
-      <p class="section-desc">មានសារសម្ងាត់មួយផ្ញើចេញពីបេះដូងរបស់បង សូមចុចលើស្រោមសំបុត្រដើម្បីបើកអាន</p>
+      <!-- Letter Body (white-space: normal បំបាត់ចន្លោះទទេរទាំងអស់) -->
+      <div style="white-space: normal !important; font-size: 16px; color: #f7e4ee; line-height: 1.75; margin: 0; padding: 0;">
+        
+        <p style="margin: 0 0 10px 0; padding: 0; line-height: 1.75;">
+          🌸 <strong style="color: #ffd166;">រីករាយថ្ងៃខួបកំណើតណា៎ មនុស្សស្រីដ៏មានតម្លៃបំផុតក្នុងជីវិតរបស់បង! ✨</strong>
+        </p>
 
-      <!-- ស្រោមសំបុត្រ 3D -->
-      <div class="envelope-interactive-box" id="envelopeBox" onclick="openRomanticLetter()">
-        <div class="envelope-3d">
-          <div class="env-flap" id="envFlap"></div>
-          <div class="env-pocket"></div>
-          <div class="env-seal" id="envSeal">
-            <span class="seal-icon">💖</span>
-            <span class="seal-hint">ចុចបើក</span>
-          </div>
-          <div class="env-text-preview">To: ធី កញ្ញារ៉ា 🌸</div>
+        <p style="margin: 0 0 10px 0; padding: 0; line-height: 1.75;">
+          អូនដឹងទេ... តាំងពីថ្ងៃដំបូងដែលអូនដើរចូលមកក្នុងជីវិតបង អូនបានប្រែក្លាយពិភពលោកដ៏សាមញ្ញ និងហត់នឿយមួយនេះ ឱ្យពោរពេញទៅដោយពន្លឺក្តីសង្ឃឹម ក្តីស្រលាញ់ និងភាពកក់ក្តៅដែលបងមិនធ្លាប់ទទួលបានពីមុនមកឡើយ។ អូនមិនត្រឹមតែជាសង្សារទេ តែអូនជាកន្លែងស្ងប់ចិត្ត ជាផ្ទះ និងជាពិភពលោកទាំងមូលរបស់បង។ រាល់ពេលដែលបងហត់នឿយពីការងារ ឬជីវិតខាងក្រៅ គ្រាន់តែបានឃើញស្នាមញញឹមដ៏ស្រស់ថ្លារបស់អូន និងឮសំឡេងទន់ភ្លន់របស់អូន ក៏ធ្វើឱ្យគ្រប់ទុក្ខកង្វល់របស់បងរលាយអស់ដែរ។
+        </p>
+
+        <p style="margin: 0 0 10px 0; padding: 0; line-height: 1.75;">
+          អរគុណអូនណាស់ណា៎... អរគុណដែលព្រមទទួលយកមនុស្សធម្មតាម្នាក់នេះ អរគុណសម្រាប់ការយល់ចិត្ត ការអត់ធ្មត់ និងក្តីស្រឡាញ់ដ៏បរិសុទ្ធដែលអូនតែងតែផ្តល់ឱ្យបង ទោះបីជាពេលខ្លះបងមានចំណុចខ្វះខាតច្រើនក៏ដោយ។ អរគុណដែលអូនបានកើតមកលើលោកនេះ និងអរគុណដែលជ្រើសរើសកាន់ដៃដើរជាមួយបង។
+        </p>
+
+        <!-- Highlight Promise Box -->
+        <div style="background: rgba(255, 51, 102, 0.12); border-left: 3.5px solid #ffd166; padding: 12px 16px; border-radius: 10px; margin: 12px 0; line-height: 1.75; color: #fff;">
+          បងប្រហែលជាមិនមែនជាមនុស្សប្រុសដែលល្អឥតខ្ចោះលើលោកទេ ប៉ុន្តែបងសន្យាថា នឹងស្រឡាញ់ មើលថែ ថ្នាក់ថ្នម ការពារ និងផ្តល់ភាពកក់ក្តៅដល់អូនឱ្យបានល្អបំផុតស្មើជីវិតរបស់បង។ មិនថាថ្ងៃអនាគតជួបរឿងរ៉ាវលំបាក ឬមានឧបសគ្គយ៉ាងណាទេ ដៃមួយគូនេះនឹងកាន់ដៃអូនឱ្យជាប់ មិនលែងឡើយ។ ពេលអូនសប្បាយ បងនឹងសើចក្បែរអូន ហើយពេលអូនពិបាកចិត្ត បងនឹងនៅជូតទឹកភ្នែក និងជាស្មារបស់អូនជារៀងរហូត។
         </div>
-        <p class="click-hint-text">✨ ចុចលើសំបុត្រដើម្បីបើកអានពរជ័យ ✨</p>
+
+        <p style="margin: 0 0 14px 0; padding: 0; line-height: 1.75;">
+          សូមជូនពរឱ្យម្ចាស់ក្សត្រីតូចរបស់បង ជួបតែស្នាមញញឹម ភាពរីករាយ សុខភាពល្អបរិបូរណ៍ និងសម្រេចបានគ្រប់បំណងប្រាថ្នាណា៎។ បងស្រឡាញ់អូនខ្លាំងជាងពាក្យពេចន៍ទាំងអស់លើលោកនេះអាចរៀបរាប់បាន... 💕
+        </p>
+
       </div>
 
-      <!-- ផ្ទាំង Modal សំបុត្រស្នេហ៍ពេញលេញ -->
-      <div class="letter-modal-overlay" id="letterModalOverlay" onclick="closeOnBackdrop(event)">
-        <div class="letter-modal-content" id="letterModalCard">
-          <button class="close-letter-btn" onclick="closeRomanticLetter()" title="បិទសំបុត្រ">✕</button>
+      <!-- Luxury Signature Card (ធានាចេញស៊ុមមាស និងពន្លឺយ៉ាងស្អាត) -->
+      <div style="display: flex; justify-content: flex-end; margin-top: 18px;">
+        <div style="background: linear-gradient(135deg, rgba(255, 51, 102, 0.22) 0%, rgba(35, 10, 48, 0.95) 50%, rgba(247, 201, 72, 0.2) 100%); border: 2px solid #ffd166; border-radius: 18px; padding: 14px 22px; text-align: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 42, 109, 0.4); max-width: 360px; width: 100%;">
           
-          <div class="letter-paper-inner">
-            <div class="stamp-box">
-              <span class="stamp-heart">💖</span>
-              <span class="stamp-text">FOR KANYARA</span>
-            </div>
-
-            <div class="letter-date-top">
-              📍 ភ្នំពេញ, ថ្ងៃទី ២៣ ខែតុលា ឆ្នាំ ២០២៦
-            </div>
-
-            <h4 class="letter-recipient">
-              ជូនចំពោះ៖ អូនសម្លាញ់ ធី កញ្ញារ៉ា (មនុស្សល្អរបស់បង) 🌸✨
-            </h4>
-
-            <div class="letter-content-text">
-              <p class="intro-p">
-                <strong>រីករាយថ្ងៃកំណើតណា៎មនុស្សល្អរបស់បង! 🎂🌹</strong>
-              </p>
-              <p>
-                អរគុណអូនខ្លាំងណាស់ដែលបានចូលមកក្នុងជីវិតរបស់បង នាំមកនូវស្នាមញញឹម ភាពកក់ក្តៅ និងក្តីសុខដែលមិនអាចកាត់ថ្លៃបានក្នុងរាល់ថ្ងៃកន្លងមកនេះ។ វត្តមានរបស់អូន គឺជាកាដូដ៏មានតម្លៃបំផុតសម្រាប់បង។
-              </p>
-              <p>
-                ក្នុងថ្ងៃខួបកំណើតដ៏ពិសេសនេះ បងសូមបួងសួង និងជូនពរឱ្យអូនសម្លាញ់ជួបតែរឿងល្អៗ មានសុខភាពល្អមាំមួន សម្រស់កាន់តែស្រស់ស្អាត គួរឱ្យស្រលាញ់ និងពោរពេញដោយស្នាមញញឹមស្រស់ស្រាយជានិច្ច។ សូមឱ្យរាល់ក្តីស្រមៃ និងការប្រាថ្នារបស់អូន មិនថាការសិក្សា ឬការងារ សម្រេចបានជោគជ័យទាំងអស់ណា៎!
-              </p>
-              <p>
-                ទោះបីទៅថ្ងៃមុខមានរឿងអ្វីកើតឡើងក៏ដោយ ក៏បងនៅតែនៅក្បែរអូន ស្រលាញ់ ការពារ និងផ្តល់កម្លាំងចិត្តឱ្យអូនរហូត។ ស្រលាញ់អូនខ្លាំងណាស់! 🥰
-              </p>
-            </div>
-
-            <div class="letter-footer-sign">
-              <div class="sign-text">ពីមនុស្សប្រុសដែលស្រលាញ់អូនជាងគេលើលោក ❤️</div>
-              <div class="sign-name">ជំនួយការ បេះដូង 💍✨</div>
-            </div>
-
-            <div class="love-actions">
-              <button class="love-btn" onclick="sendLoveHearts()">💖 ស្រលាញ់អូនខ្លាំងណាស់ (ចុចផ្ញើបេះដូង) 💕</button>
-            </div>
+          <div style="font-size: 16px; font-style: italic; color: #ffb3c6; margin-bottom: 3px;">
+            “ ស្រឡាញ់អូនស្មើជីវិត... ”
           </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 6px;">
+            <span style="height: 1px; width: 35px; background: linear-gradient(90deg, transparent, #ffd166, transparent); display: inline-block;"></span>
+            <span style="color: #ffd166; font-size: 12px;">✨</span>
+            <span style="height: 1px; width: 35px; background: linear-gradient(90deg, transparent, #ffd166, transparent); display: inline-block;"></span>
+          </div>
+
+          <div style="font-weight: 700; font-size: 19px; background: linear-gradient(135deg, #ffffff 0%, #ffd166 50%, #ff85a2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            ពីមនុស្សសំខាន់សម្រាប់អូន ❤️
+          </div>
+
+          <div style="margin-top: 8px; font-size: 11px; color: #ffd6e5; background: rgba(255, 255, 255, 0.08); padding: 3px 12px; border-radius: 15px; display: inline-block; border: 1px dashed rgba(255, 209, 102, 0.4);">
+            23 September 2026 • Forever & Always
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <!-- ផ្នែកទី ៤៖ Photo Gallery -->
-    <section class="gallery-section">
-      <h3 class="section-title">📸 កម្រងរូបភាពអនុស្សាវរីយ៍ (Memories Gallery)</h3>
-      <p class="section-desc">ពេលវេលាដ៏ស្រស់បំព្រង និងស្នាមញញឹមរបស់ ធី កញ្ញារ៉ា</p>
+    </div>
+  </div>
+</section>
 
-      <div class="gallery-grid">
-        <div class="photo-card">
-          <div class="photo-frame">
-            <img src="images/baby.jpg" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500'" alt="Memory 1">
-          </div>
-          <div class="photo-caption">✨ ស្នាមញញឹមស្រស់ស្អាត</div>
+ <!-- SECTION 5: 10 MEMORIES (HEART-CIRCLE + FLOWER) -->
+<section id="memories" style="padding: 55px 0; position: relative;">
+
+  <!-- កូដ Style បង្កប់ផ្ទាល់ ធានាថារូបរង្វង់មូល និង Grid ដំណើរការ ១០០% -->
+  <style>
+    #memories .grid-10-memories {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 16px !important;
+      max-width: 1100px;
+      margin: 25px auto 0;
+    }
+    @media (max-width: 950px) {
+      #memories .grid-10-memories {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+    @media (max-width: 600px) {
+      #memories .grid-10-memories {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+      }
+    }
+    .card-memory-flower {
+      background: rgba(26, 8, 36, 0.85) !important;
+      border: 1.5px solid rgba(247, 201, 72, 0.4) !important;
+      border-radius: 22px !important;
+      padding: 18px 10px 15px !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      transition: all 0.35s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6) !important;
+    }
+    .card-memory-flower:hover {
+      transform: translateY(-6px) scale(1.03) !important;
+      border-color: #ff4d79 !important;
+      box-shadow: 0 12px 30px rgba(255, 77, 121, 0.45) !important;
+    }
+    @keyframes spinFloralRing {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-title" style="text-align: center; margin-bottom: 30px;">
+      <span class="sub-heading" style="font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff85a2; display: block; margin-bottom: 4px;">Unforgettable Times</span>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 34px; background: linear-gradient(135deg, #ffe082 0%, #f5c767 50%, #d49a37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">Our 10 Sweet Memories 📸🌸</h2>
+      <p style="color: #cca8be; font-size: 14px; margin-top: 6px;">អនុស្សាវរីយ៍ផ្អែមល្ហែម និងស្នាមញញឹមរវាងពួកយើងទាំងពីរ (ចុចលើរូបដើម្បីពង្រីកមើល)</p>
+    </div>
+
+    <div class="grid-10-memories">
+
+      <!-- Photo 1 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80', 'Our First Date - ថ្ងៃជួបគ្នាដំបូងដែលបេះដូងលោតញាប់ខុសធម្មតា ❤️')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌹</div>
         </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Chapter 1</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">First Date 📷</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ថ្ងៃដំបូងដែលបានជួបអូន ពិភពលោកប្រែជាស្រស់បំព្រង</div>
+      </div>
 
-        <div class="photo-card">
-          <div class="photo-frame">
-            <img src="images/2.jpg" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500'" alt="Memory 2">
-          </div>
-          <div class="photo-caption">🌸 ពេលវេលាដ៏រីករាយ</div>
+      <!-- Photo 2 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80', 'Sweet Cafe - ពេលវេលាដ៏រីករាយ និងកក់ក្តៅ ☕')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌷</div>
         </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Sweet Time</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Sweet Cafe ☕</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">គ្រាន់តែបានញ៉ាំកាហ្វេជជែកលេងជាមួយអូន ក៏មានក្តីសុខបំផុត</div>
+      </div>
 
-        <div class="photo-card">
-          <div class="photo-frame">
-            <img src="images/3.jpg" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500'" alt="Memory 3">
-          </div>
-          <div class="photo-caption">💖 ភាពស្រស់ស្រាយជានិច្ច</div>
+      <!-- Photo 3 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80', 'First Movie Date - មើលកុនជាមួយគ្នា និងកាន់ដៃអូនយ៉ាងកក់ក្តៅ 🎬')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌸</div>
         </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Cinema</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">First Movie 🎬</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">អង្គុយក្បែរអូន កាន់ដៃអូនយ៉ាងកក់ក្តៅក្នុងរោងកុន</div>
+      </div>
 
-        <div class="photo-card">
-          <div class="photo-frame">
-            <img src="images/baby1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500'" alt="Memory 4">
-          </div>
-          <div class="photo-caption">🎂 ថ្ងៃកំណើត ២៣ តុលា</div>
+      <!-- Photo 4 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80', 'Road Trip Adventures - ដំណើរកម្សាន្ត និងខ្យល់អាកាសដ៏បរិសុទ្ធ 🚗')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌻</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Adventures</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Road Trip 🚗</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ជិះដើរលេងជាមួយគ្នា មើលទេសភាព និងខ្យល់ត្រជាក់</div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80', 'Street Food Trips - ញ៉ាំរបស់ឆ្ងាញ់ៗជាមួយអូន 🍜')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌺</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Yummy</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Street Food 🍜</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ដើរញ៉ាំរបស់ដែលអូនចូលចិត្ត សើចសប្បាយពេញមួយល្ងាច</div>
+      </div>
+
+      <!-- Photo 6 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?auto=format&fit=crop&w=900&q=80', 'Sunset Magic - មើលថ្ងៃលិចដ៏រ៉ូមែនទិកជាមួយគ្នា 🌅')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌼</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Sunset</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Sunset View 🌅</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ឈរមើលថ្ងៃលិចជាមួយគ្នា ពន្លឺមាសជះលើស្នាមញញឹមអូន</div>
+      </div>
+
+      <!-- Photo 7 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=900&q=80', 'Rainy Walks - ដើរក្រោមឆ័ត្រតែមួយក្នុងថ្ងៃភ្លៀង 🌧️')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">💐</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Cozy Rain</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Under Umbrella 🌧️</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ដើរជ្រកក្រោមឆ័ត្រតែមួយ ត្រជាក់កាយតែបេះដូងកក់ក្តៅ</div>
+      </div>
+
+      <!-- Photo 8 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80', 'Midnight Calls - និយាយទូរស័ព្ទជជែកគ្នាមិនចង់ដាក់ 🌙')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌸</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Midnight</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Midnight Calls 🌙</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">និយាយទូរស័ព្ទជជែកគ្នារហូតដល់យប់ជ្រៅ មិនចង់ដាក់សោះ</div>
+      </div>
+
+      <!-- Photo 9 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80', 'Cute Moments - កាយវិការងរង៉ក់គួរឱ្យស្រឡាញ់របស់អូន 🥰')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌷</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Adorable</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Your Cute Smile 🥰</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ពេលអូនងរង៉ក់ ឬសើចលេង រំលាយបេះដូងបងគ្រប់ពេល</div>
+      </div>
+
+      <!-- Photo 10 -->
+      <div class="card-memory-flower" onclick="openLightbox('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80', 'Happy Birthday Kanhara - រីករាយថ្ងៃខួបកំណើតមនុស្សស្រីដែលបងស្រឡាញ់ស្មើជីវិត 🎉🎂')">
+        <div style="position: relative; width: 100px; height: 100px; margin-bottom: 12px;">
+          <div style="position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.7); animation: spinFloralRing 20s linear infinite; pointer-events: none;"></div>
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=300&q=80" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 15px rgba(255, 77, 121, 0.6); display: block;">
+          <div style="position: absolute; bottom: -2px; right: -2px; width: 34px; height: 34px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.5);">🌹</div>
+        </div>
+        <span style="font-size: 11px; color: #ffd166; font-weight: 600; text-transform: uppercase;">Special Day</span>
+        <div style="font-size: 14.5px; font-weight: 700; color: #fff; margin: 3px 0;">Celebration 🎉</div>
+        <div style="font-size: 12px; color: #ffd6e5; line-height: 1.4;">ថ្ងៃកំណើតដ៏មានន័យបំផុតជាមួយមនុស្សស្រីដែលបងស្រឡាញ់ស្មើជីវិត</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-content">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Memory">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+  <!-- SECTION 6 -->
+  <section id="special">
+    <div class="container">
+      <div class="section-title">
+        <span class="sub-heading">From The Core of My Heart</span>
+        <h2>5 Things I Love About You ❤️</h2>
+        <p>មូលហេតុដែលធ្វើឱ្យអូនក្លាយជាមនុស្សពិសេសបំផុតក្នុងចិត្តបង</p>
+      </div>
+      <div class="reasons-grid">
+        <div class="reason-card"><div class="reason-icon">😊</div><div class="reason-title">Your Smile</div><div class="reason-desc">ស្នាមញញឹមដ៏ស្រស់ស្រាយរបស់អូន តែងតែបំភ្លឺថ្ងៃរបស់បង និងធ្វើឱ្យបងរលាយចិត្តគ្រប់ពេល។</div></div>
+        <div class="reason-card"><div class="reason-icon">💖</div><div class="reason-title">Your Kindness</div><div class="reason-desc">ទឹកចិត្តល្អ ភាពទន់ភ្លន់ និងការយកចិត្តទុកដាក់ដែលអូនមានចំពោះមនុស្សជុំវិញខ្លួន។</div></div>
+        <div class="reason-card"><div class="reason-icon">😂</div><div class="reason-title">Your Laugh</div><div class="reason-desc">សម្លេងសើចដ៏គួរឱ្យស្រឡាញ់ ដែលធ្វើឱ្យពិភពលោកទាំងមូលមានភាពស្រស់បំព្រង។</div></div>
+        <div class="reason-card"><div class="reason-icon">🥰</div><div class="reason-title">Your Love</div><div class="reason-desc">ក្តីស្រឡាញ់ និងការយល់ចិត្តដែលអូនតែងតែផ្តល់ឱ្យបង ធ្វើឱ្យបងមានអារម្មណ៍ថាសំណាងបំផុត។</div></div>
+        <div class="reason-card"><div class="reason-icon">✨</div><div class="reason-title">Simply YOU</div><div class="reason-desc">គ្រប់យ៉ាងដែលជាអូន — អូនជាមនុស្សតែម្នាក់គត់ដែលបងចង់នៅក្បែរពេញមួយជីវិត។</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="song">
+    <div class="container">
+      <div class="section-title">
+        <span class="sub-heading">Melody of Love</span>
+        <h2>Our Romantic Song 🎵</h2>
+        <p>បទចម្រៀងតន្ត្រីដ៏ផ្អែមល្ហែមសម្រាប់ថ្ងៃកំណើតរបស់អូន</p>
+      </div>
+      <div class="music-player-box">
+        <div class="vinyl-disk" id="vinylDisk"><div class="vinyl-center"><i class="fa-solid fa-heart"></i></div></div>
+        <div style="font-size: 22px; font-weight: 700; color: #fff;">Can't Help Falling in Love</div>
+        <div style="font-size: 15px; color: var(--soft-pink); margin-bottom: 18px;">Romantic Music Box Melodies 💕</div>
+        <div class="sound-waves" id="soundWaves">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <button class="play-circle-btn" onclick="toggleMusic()"><i class="fa-solid fa-play" id="playBtnIcon"></i></button>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 15px;">🎧 ចុច Play ដើម្បីស្តាប់តន្ត្រីរ៉ូមែនទិកពិរោះៗ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="flowers">
+    <div class="container">
+      <div class="section-title">
+        <span class="sub-heading">Fresh Flowers For My Love</span>
+        <h2>Virtual Flower Bouquet 🌷</h2>
+        <p>ផ្កានិម្មិតដ៏ស្រស់ស្អាតជូនអូន មិនចេះក្រៀមស្វិតជារៀងរហូត</p>
+      </div>
+      <div class="flower-garden-grid">
+        <div class="flower-card" onclick="sendFlower('Rose 🌹', 'ផ្កាកុលាបក្រហម តំណាងឱ្យក្តីស្រឡាញ់ដ៏ជ្រាលជ្រៅ និងភាពស្មោះត្រង់ជារៀងរហូត!')">
+          <div class="flower-bloom-box">🌹</div><div class="flower-name">Red Rose</div><div class="flower-meaning">Deep Love & Passion</div><button class="btn-pick-flower">ជូនផ្កានេះ ❤️</button>
+        </div>
+        <div class="flower-card" onclick="sendFlower('Pink Tulip 🌷', 'ផ្កា Tulip ពណ៌ផ្កាឈូក តំណាងឱ្យភាពទន់ភ្លន់ ក្តីស្រលាញ់ដ៏បរិសុទ្ធ!')">
+          <div class="flower-bloom-box">🌷</div><div class="flower-name">Pink Tulip</div><div class="flower-meaning">Pure Affection & Care</div><button class="btn-pick-flower">ជូនផ្កានេះ 💕</button>
+        </div>
+        <div class="flower-card" onclick="sendFlower('Sunflower 🌻', 'ផ្កាឈូករ័ត្ន តំណាងឱ្យភាពរឹងមាំ ស្នាមញញឹម និងពន្លឺថ្ងៃដ៏កក់ក្តៅ!')">
+          <div class="flower-bloom-box">🌻</div><div class="flower-name">Bright Sunflower</div><div class="flower-meaning">Warmth & Sunshine</div><button class="btn-pick-flower">ជូនផ្កានេះ ☀️</button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p>Designed with Love for <strong>ធី កញ្ញារ៉ា</strong> | ២៣ តុលា ២០២៦</p>
-    </footer>
+  <!-- SECTION 9: SURPRISE GIFT BOX (ដំណើរការ ១០០% ពេលចុច) -->
+<!-- SECTION 9: ULTRA-SWEET SURPRISE GIFT -->
+<section id="gift" style="padding: 50px 0; position: relative;">
+  <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 15px;">
+    
+    <div class="section-title" style="margin-bottom: 25px;">
+      <span class="sub-heading" style="font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff85a2; display: block; margin-bottom: 4px;">Just For You</span>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 34px; background: linear-gradient(135deg, #ffe082 0%, #f5c767 50%, #d49a37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">Surprise Gift For Kanhara 🎁</h2>
+      <p style="color: #cca8be; font-size: 14px; margin-top: 5px;">តើមានអ្វីនៅក្នុងប្រអប់កាដូនេះ? ចុចបើកដើម្បីដឹង!</p>
+    </div>
 
+    <div class="gift-stage">
+      <!-- ប្រអប់កាដូ 3D -->
+      <div class="gift-box-wrapper" id="giftBox" onclick="openGift()" style="position: relative; width: 160px; height: 160px; margin: 0 auto 30px; cursor: pointer;">
+        
+        <!-- គម្របកាដូ -->
+        <div class="gift-lid" id="giftLid" style="width: 156px; height: 40px; background: linear-gradient(135deg, #ff1a66, #ad0037); border-radius: 12px; position: absolute; top: 25px; left: 2px; border: 2px solid #ffd166; box-shadow: 0 8px 20px rgba(0,0,0,0.5); transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 10;">
+          <div class="gift-bow" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 36px; color: #ffd700;">🎀</div>
+          <div class="gift-ribbon-vertical" style="position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 24px; background: linear-gradient(135deg, #ffe082, #f5c767); box-shadow: 0 0 10px rgba(245, 199, 103, 0.5);"></div>
+        </div>
+
+        <!-- តួកាដូខាងក្រោម -->
+        <div class="gift-box-base" style="width: 136px; height: 105px; background: linear-gradient(135deg, #e6005c, #8a002e); border-radius: 0 0 16px 16px; position: absolute; bottom: 0; left: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid #ffd166;">
+          <div class="gift-ribbon-vertical" style="position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 24px; background: linear-gradient(135deg, #ffe082, #f5c767); box-shadow: 0 0 10px rgba(245, 199, 103, 0.5);"></div>
+        </div>
+
+      </div>
+
+      <!-- ប៊ូតុងចុចបើកកាដូ -->
+      <button class="btn-romantic" id="openGiftBtn" onclick="openGift()" style="background: linear-gradient(135deg, #ff4d79, #ff758c); color: #fff; border: none; padding: 13px 32px; font-size: 16px; font-weight: 600; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 20px rgba(255, 77, 121, 0.6); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-gift"></i> Open Your Gift 🎁
+      </button>
+
+      <!-- ផ្ទាំងកាដូ Surprise ផ្អែមល្ហែមបំផុត (Ultra-Sweet Reveal) -->
+      <div class="gift-reveal-card" id="giftReveal" style="display: none; max-width: 660px; margin: 25px auto 0; animation: unfoldGift 0.7s ease forwards;">
+        <div style="background: linear-gradient(145deg, rgba(38, 12, 48, 0.98), rgba(18, 4, 24, 0.98)); border: 2px solid #ffd166; border-radius: 28px; padding: 32px 22px 28px; box-shadow: 0 0 50px rgba(255, 42, 109, 0.5), inset 0 0 25px rgba(247, 201, 72, 0.1); text-align: center;">
+          
+          <!-- រូបថតអមមកុដរាជិនី -->
+          <div style="position: relative; width: 95px; height: 95px; margin: 0 auto 15px;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 26px; filter: drop-shadow(0 0 8px #ffd700);">👑</div>
+            <img src="images/3.jpg" 
+                 alt="Kanhara" 
+                 style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #ffd166; box-shadow: 0 0 20px rgba(255, 77, 121, 0.8);">
+            <div style="position: absolute; bottom: -2px; right: -2px; width: 30px; height: 30px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px;">💖</div>
+          </div>
+
+          <!-- ចំណងជើងផ្អែមល្ហែម -->
+          <div style="font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff85a2; margin-bottom: 2px;">Only For My Princess</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; background: linear-gradient(135deg, #fff2a3 0%, #f7c948 45%, #c99324 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0 0 14px 0;">
+            Special Surprise For Kanhara ❤️
+          </h3>
+
+          <!-- អត្ថន័យសារផ្អែមល្ហែម -->
+          <div style="font-size: 15.5px; color: #fcebf2; line-height: 1.85; margin-bottom: 22px; text-align: center; max-width: 580px; margin-left: auto; margin-right: auto;">
+            <p style="margin-bottom: 12px;">
+              អូនប្រហែលជាឆ្ងល់ហើយមែនទេ ថាតើក្នុងប្រអប់កាដូនេះមានអ្វី? 🥰 <br>
+              ការពិតទៅ កាដូដ៏ធំបំផុត និងមានតម្លៃបំផុតដែលបងមាន គឺ<strong style="color: #ffd166;">បេះដូង ភាពស្មោះត្រង់ និងក្តីស្រឡាញ់ទាំងអស់</strong> ដែលបងបានប្រគល់ជូនអូនរួចទៅហើយ...
+            </p>
+            <p style="margin-bottom: 0; color: #ffd6e5;">
+              ក្រៅពីគេហទំព័រអនុស្សាវរីយ៍មួយនេះ បងមានរៀបចំនំខួបកំណើត ការជូនពរ និងដំណើរកម្សាន្តដ៏ផ្អែមល្ហែមមួយរង់ចាំអូនរួចជាស្រេច! ត្រៀមខ្លួនទៅញ៉ាំរបស់ឆ្ងាញ់ៗ និងដើរលេងជាមួយបងណា៎មនុស្សល្អ! 🌸🎉
+            </p>
+          </div>
+
+          <!-- ប័ណ្ណស្នេហាពិសេសទាំង ៤ (VIP Love Coupons) -->
+          <div style="font-size: 13px; color: #ffd166; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;">
+            ✨ VIP Romantic Love Coupons (សុពលភាពមួយជីវិត) ✨
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; max-width: 580px; margin: 0 auto 22px; text-align: left;">
+            
+            <!-- Coupon 1 -->
+            <div style="background: rgba(255, 51, 102, 0.12); border: 1.5px dashed #ffd166; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 26px;">🧋</span>
+              <div>
+                <div style="color: #ffd166; font-weight: 700; font-size: 14px;">Free Food & Boba Pass</div>
+                <div style="color: #f7e4ee; font-size: 12px;">ប៉ាវរបស់ឆ្ងាញ់ៗ និងតែគុជគ្រប់ពេលអូនឃ្លាន!</div>
+              </div>
+            </div>
+
+            <!-- Coupon 2 -->
+            <div style="background: rgba(255, 51, 102, 0.12); border: 1.5px dashed #ffd166; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 26px;">🫂</span>
+              <div>
+                <div style="color: #ffd166; font-weight: 700; font-size: 14px;">24/7 Warm Hugs & Cuddles</div>
+                <div style="color: #f7e4ee; font-size: 12px;">អោបយ៉ាងកក់ក្តៅ និងលួងលោមពេលអូនហត់ ឬងរង៉ក់!</div>
+              </div>
+            </div>
+
+            <!-- Coupon 3 -->
+            <div style="background: rgba(255, 51, 102, 0.12); border: 1.5px dashed #ffd166; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 26px;">🚗</span>
+              <div>
+                <div style="color: #ffd166; font-weight: 700; font-size: 14px;">Anywhere Date Ticket</div>
+                <div style="color: #f7e4ee; font-size: 12px;">នាំអូនទៅដើរលេងគ្រប់កន្លែងស្អាតៗដែលអូនចង់ទៅ!</div>
+              </div>
+            </div>
+
+            <!-- Coupon 4 -->
+            <div style="background: rgba(255, 51, 102, 0.12); border: 1.5px dashed #ffd166; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 26px;">👑</span>
+              <div>
+                <div style="color: #ffd166; font-weight: 700; font-size: 14px;">100% Listen & Spoil You</div>
+                <div style="color: #f7e4ee; font-size: 12px;">តាមចិត្តអូនគ្រប់រឿង គ្មានពាក្យថាប្រកែក ឬខឹងអូនឡើយ!</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ប៊ូតុងចុចទទួលប័ណ្ណស្នេហ៍ -->
+          <button onclick="claimLoveCoupons()" style="background: linear-gradient(135deg, #ff2a6d, #ff758c); color: #fff; border: none; padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 30px; cursor: pointer; box-shadow: 0 6px 20px rgba(255, 42, 109, 0.7); display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s;">
+            <i class="fa-solid fa-heart-circle-check"></i> ចុចទទួលយកប័ណ្ណស្នេហ៍ទាំងអស់ 💕
+          </button>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- កូដដំណើរការ និងសំឡេងតន្ត្រី -->
+  <script>
+    function openGift() {
+      const lid = document.getElementById('giftLid');
+      const box = document.getElementById('giftBox');
+      const reveal = document.getElementById('giftReveal');
+      const btn = document.getElementById('openGiftBtn');
+
+      if (lid) lid.style.transform = 'translateY(-75px) rotate(-28deg)';
+      if (box) box.classList.add('opened');
+      if (reveal) {
+        reveal.style.display = 'block';
+        reveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (btn) btn.innerHTML = "<i class='fa-solid fa-heart'></i> Surprise Opened ❤️";
+
+      try {
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 180,
+            spread: 100,
+            origin: { y: 0.65 },
+            colors: ['#ffd166', '#ff3366', '#ff758c', '#ffffff']
+          });
+        }
+      } catch (e) {}
+    }
+
+    function claimLoveCoupons() {
+      try {
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 160,
+            spread: 90,
+            origin: { y: 0.7 },
+            colors: ['#ff2a6d', '#ffd166', '#ff85a2', '#ffffff']
+          });
+        }
+      } catch (e) {}
+      alert("🎉 ពិធីទទួលប័ណ្ណស្នេហ៍ជោគជ័យ!\\n\\nប័ណ្ណស្នេហ៍ទាំង ៤ ត្រូវបានប្រគល់ជូន KANHARA THY រួចរាល់ហើយ! ប័ណ្ណនេះមានសុពលភាពមួយជីវិត គ្មានថ្ងៃផុតកំណត់ឡើយ ❤️");
+    }
+  </script>
+</section>
+
+  <!-- SECTION 10 -->
+  <!-- FINAL LOVE MESSAGE SECTION (MASTERPIECE EDITION) -->
+<section class="final-section" style="padding: 65px 0 85px; position: relative; text-align: center;">
+
+  <style>
+    @keyframes finalHaloRotate {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes finalAvatarGlow {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(255, 42, 109, 0.8), 0 0 15px rgba(247, 201, 72, 0.6); }
+      50% { transform: scale(1.03); box-shadow: 0 0 40px rgba(255, 42, 109, 1), 0 0 25px rgba(247, 201, 72, 0.9); }
+    }
+    @keyframes finalHeartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+    .final-love-btn:hover {
+      transform: scale(1.08) !important;
+      box-shadow: 0 10px 35px rgba(255, 42, 109, 1), 0 0 20px rgba(247, 201, 72, 0.8) !important;
+    }
+  </style>
+
+  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+    <div style="background: radial-gradient(circle at center, rgba(55, 14, 68, 0.95) 0%, rgba(18, 4, 25, 0.98) 100%); border: 2px solid rgba(247, 201, 72, 0.7); border-radius: 32px; padding: 45px 25px 35px; box-shadow: 0 0 60px rgba(255, 42, 109, 0.5), inset 0 0 30px rgba(247, 201, 72, 0.12); position: relative;">
+      
+      <!-- Crown + Avatar Frame (រូបភាព images/3.jpg) -->
+      <div style="position: relative; width: 145px; height: 145px; margin: 0 auto 24px;">
+        <!-- មកុដរាជិនី -->
+        <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%) rotate(-4deg); font-size: 36px; z-index: 10; filter: drop-shadow(0 0 10px #ffd700);">👑</div>
+        
+        <!-- រង្វង់ពន្លឺវិលជុំវិញ -->
+        <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border-radius: 50%; border: 2px dashed rgba(255, 117, 140, 0.8); animation: finalHaloRotate 25s linear infinite; pointer-events: none;"></div>
+        
+        <!-- រូបថតរបស់ Kanhara -->
+        <img src="images/3.jpg" alt="Kanhara Thy" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3.5px solid #ffd166; animation: finalAvatarGlow 2.5s ease-in-out infinite; display: block; position: relative; z-index: 2;">
+        
+        <!-- ផ្លាកបេះដូងលោត -->
+        <div style="position: absolute; bottom: 2px; right: 2px; width: 38px; height: 38px; background: linear-gradient(135deg, #ff2a6d, #ff758c); border: 2.5px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; z-index: 10; animation: finalHeartBeat 1.4s infinite; box-shadow: 0 4px 10px rgba(0,0,0,0.6);">💖</div>
+      </div>
+
+      <!-- Tag ពីលើ -->
+      <div style="font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff85a2; margin-bottom: 6px;">To The Love of My Life</div>
+
+      <!-- ពាក្យស្លោកស្នេហ៍ផ្អែមល្ហែម -->
+      <div style="font-family: 'Playfair Display', serif; font-size: 27px; line-height: 1.45; color: #fff; max-width: 650px; margin: 0 auto 8px; font-weight: 700;">
+        “ អរគុណអូនដែលបានក្លាយជាចំណែកដ៏អស្ចារ្យ និងមានតម្លៃបំផុតក្នុងជីវិតបង ”
+      </div>
+      <div style="font-size: 15.5px; color: #ffd6e5; font-style: italic; margin-bottom: 20px;">
+        “Thank you for being the most wonderful part of my life.”
+      </div>
+
+      <!-- ឈ្មោះអបអរខួបកំណើតពណ៌មាសចែងចាំង -->
+      <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #fff2a3 0%, #f7c948 50%, #c99324 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 26px; letter-spacing: 1px; text-shadow: 0 0 20px rgba(247, 201, 72, 0.7);">
+        Happy Birthday, My Queen KANHARA THY ❤️🎂
+      </div>
+
+      <!-- ប៊ូតុងផ្ញើក្តីស្រឡាញ់ -->
+      <div>
+        <button class="final-love-btn" onclick="burstHeartsEffect()" style="background: linear-gradient(135deg, #ff2a6d 0%, #ff5e97 50%, #ffa8c5 100%); color: #fff; border: none; padding: 14px 34px; font-size: 16px; font-weight: 700; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 25px rgba(255, 42, 109, 0.7); display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;">
+          <i class="fa-solid fa-heart-pulse"></i> Send Infinite Love 💕
+        </button>
+      </div>
+
+      <!-- ផ្លាកកាលបរិច្ឆេទខួបកំណើតខាងក្រោម -->
+      <div style="margin-top: 30px; display: inline-block; padding: 8px 24px; border-radius: 30px; background: rgba(255, 255, 255, 0.07); border: 1px dashed rgba(247, 201, 72, 0.4); color: #ffd6e5; font-size: 13.5px;">
+        Made with all my heart ❤️ for <strong>KANHARA THY</strong> | 23.09.2026
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function burstHeartsEffect() {
+      try {
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 200,
+            spread: 120,
+            origin: { y: 0.75 },
+            colors: ['#ff1493', '#ff69b4', '#ffd700', '#ff0055', '#ffffff']
+          });
+        }
+      } catch (e) {}
+      alert("❤️❤️❤️ Sending infinite love and sweet kisses to KANHARA THY! Happy Birthday My Love! ❤️❤️❤️");
+    }
+  </script>
+</section>
+  <script>
+    function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+    // Candle Action
+    let candleBlown = false;
+    function blowCandle() {
+      const flame = document.getElementById('flame');
+      const msg = document.getElementById('wishMessage');
+      const btn = document.getElementById('wishBtn');
+      if (!candleBlown) {
+        flame.classList.add('blown-out'); candleBlown = true;
+        msg.innerHTML = "✨ សេចក្តីប្រាថ្នារបស់អូនត្រូវបានទទួល! សូមឱ្យគ្រប់បំណងក្លាយជាការពិតណា៎! 🎉🎂❤️";
+        btn.innerHTML = "<i class='fa-solid fa-rotate-right'></i> Light Candle Again";
+        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+      } else {
+        flame.classList.remove('blown-out'); candleBlown = false;
+        msg.innerHTML = "ទៀនត្រូវបានបំភ្លឺឡើងវិញហើយ! ចុចដើម្បីបួងសួងសារជាថ្មី ✨";
+        btn.innerHTML = "<i class='fa-solid fa-wand-magic-sparkles'></i> Make a Wish ✨";
+      }
+    }
+
+    // Lightbox Modal
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').style.display = 'none';
+      }
+    }
+
+    // Flower Action
+    function sendFlower(name, text) {
+      confetti({ particleCount: 60, spread: 60, origin: { y: 0.7 }, colors: ['#ff4d79', '#ff85a2', '#f5c767'] });
+      alert("🌷 អ្នកបានជូន " + name + " ទៅកាន់ Kanhara Thy!\n\n" + text);
+    }
+
+    // Gift Action
+    let giftOpened = false;
+    function openGift() {
+      if (!giftOpened) {
+        document.getElementById('giftBox').classList.add('opened');
+        document.getElementById('giftReveal').style.display = 'block';
+        document.getElementById('openGiftBtn').innerHTML = "<i class='fa-solid fa-heart'></i> Surprise Opened ❤️";
+        giftOpened = true;
+        confetti({ particleCount: 180, spread: 100, origin: { y: 0.65 } });
+      }
+    }
+
+    function burstHeartsEffect() {
+      confetti({ particleCount: 150, spread: 120, origin: { y: 0.8 }, shapes: ['circle'], colors: ['#ff1493', '#ff69b4', '#ffd700', '#ff0055'] });
+      alert("Sending infinite love to KANHARA THY! ❤️❤️❤️");
+    }
+
+    // Music Synthesizer
+    let audioCtx = null, isPlaying = false, musicInterval = null;
+    const melody = [
+      { f: 261.63, d: 0.4 }, { f: 261.63, d: 0.4 }, { f: 293.66, d: 0.8 }, { f: 261.63, d: 0.8 },
+      { f: 349.23, d: 0.8 }, { f: 329.63, d: 1.4 }, { f: 261.63, d: 0.4 }, { f: 261.63, d: 0.4 },
+      { f: 293.66, d: 0.8 }, { f: 261.63, d: 0.8 }, { f: 392.00, d: 0.8 }, { f: 349.23, d: 1.4 }
+    ];
+    function playTone(freq, duration) {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator(), gain = audioCtx.createGain();
+        osc.type = 'triangle'; osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + duration);
+      } catch(e) {}
+    }
+    let noteIndex = 0;
+    function startMelodyLoop() {
+      if (musicInterval) clearInterval(musicInterval);
+      noteIndex = 0;
+      musicInterval = setInterval(() => {
+        if (!isPlaying) return;
+        const note = melody[noteIndex]; playTone(note.f, note.d);
+        noteIndex = (noteIndex + 1) % melody.length;
+      }, 700);
+    }
+    function toggleMusic() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      isPlaying = !isPlaying;
+      document.getElementById('playBtnIcon').className = isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play";
+      document.getElementById('vinylDisk').classList.toggle('spinning', isPlaying);
+      document.getElementById('soundWaves').classList.toggle('active', isPlaying);
+      document.getElementById('floatingMusicBtn').classList.toggle('playing', isPlaying);
+      if (isPlaying) startMelodyLoop(); else if (musicInterval) clearInterval(musicInterval);
+    }
+
+    // Canvas Particles
+    const canvas = document.getElementById('particles-canvas'), ctx = canvas.getContext('2d');
+    let width, height, particles = [];
+    function resizeCanvas() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas); resizeCanvas();
+
+    class RomanticParticle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * width; this.y = height + Math.random() * 50;
+        this.size = Math.random() * 12 + 6; this.speedY = Math.random() * 1.2 + 0.6;
+        this.speedX = (Math.random() - 0.5) * 0.8; this.opacity = Math.random() * 0.6 + 0.2;
+        this.type = Math.random() > 0.4 ? 'heart' : 'sparkle';
+        this.color = Math.random() > 0.5 ? '#ff4d79' : '#f5c767';
+      }
+      update() { this.y -= this.speedY; this.x += this.speedX; if (this.y < -20) this.reset(); }
+      draw() {
+        ctx.save(); ctx.globalAlpha = this.opacity;
+        if (this.type === 'heart') {
+          ctx.fillStyle = this.color; ctx.beginPath();
+          const h = this.size * 0.3;
+          ctx.moveTo(this.x, this.y + h);
+          ctx.bezierCurveTo(this.x, this.y, this.x - this.size / 2, this.y, this.x - this.size / 2, this.y + h);
+          ctx.bezierCurveTo(this.x - this.size / 2, this.y + (this.size + h) / 2, this.x, this.y + (this.size + h) / 2 + 3, this.x, this.y + this.size);
+          ctx.bezierCurveTo(this.x, this.y + (this.size + h) / 2 + 3, this.x + this.size / 2, this.y + (this.size + h) / 2, this.x + this.size / 2, this.y + h);
+          ctx.bezierCurveTo(this.x + this.size / 2, this.y, this.x, this.y, this.x, this.y + h);
+          ctx.fill();
+        } else {
+          ctx.fillStyle = '#ffd700'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size / 4, 0, Math.PI * 2); ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+    for (let i = 0; i < 35; i++) particles.push(new RomanticParticle());
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
 </body>
 </html>
